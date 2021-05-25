@@ -238,7 +238,7 @@ window.onload = function () {
     // Generate the default level
     level.generate()
 
-    // Add an apple
+    // Add Item
     addItem()
     addItem()
     addItem()
@@ -278,7 +278,7 @@ window.onload = function () {
       // Tile must be empty
       if (!overlap && level.tiles[ax][ay] == 0) {
         // Add an apple at the tile position
-        level.tiles[ax][ay] = randomInteger(2, 5)
+        level.tiles[ax][ay] = randomInteger(2, 9)
 
         valid = true
       }
@@ -371,6 +371,7 @@ window.onload = function () {
 
           // Check collision with an apple
           if (level.tiles[nx][ny] >= 2) {
+            let posItem = level.tiles[nx][ny]
             // Remove the apple
             level.tiles[nx][ny] = 0
 
@@ -381,7 +382,14 @@ window.onload = function () {
             snake.grow()
 
             // Add a point to the score
-            score++
+
+            if (posItem >= 2 && posItem <= 5) {
+              score += 10
+            } else if (posItem >= 6 && posItem <= 7) {
+              score += 5
+            } else if (posItem >= 8 && posItem <= 9) {
+              score -= 5
+            }
 
             $(".snake-score").text(score)
           }
@@ -547,6 +555,98 @@ window.onload = function () {
 
           // Draw the apple image
           var tx = 0
+          var ty = 6
+          var tilew = 64
+          var tileh = 64
+          context.drawImage(
+            tileimage,
+            tx * tilew,
+            ty * tileh,
+            tilew,
+            tileh,
+            tilex,
+            tiley,
+            level.tilewidth,
+            level.tileheight
+          )
+        } else if (tile == 6) {
+          // Apple
+
+          // Draw apple background
+          // context.fillStyle = "#ffffff"
+          context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
+
+          // Draw the apple image
+          var tx = 1
+          var ty = 3
+          var tilew = 64
+          var tileh = 64
+          context.drawImage(
+            tileimage,
+            tx * tilew,
+            ty * tileh,
+            tilew,
+            tileh,
+            tilex,
+            tiley,
+            level.tilewidth,
+            level.tileheight
+          )
+        } else if (tile == 7) {
+          // Apple
+
+          // Draw apple background
+          // context.fillStyle = "#ffffff"
+          context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
+
+          // Draw the apple image
+          var tx = 1
+          var ty = 4
+          var tilew = 64
+          var tileh = 64
+          context.drawImage(
+            tileimage,
+            tx * tilew,
+            ty * tileh,
+            tilew,
+            tileh,
+            tilex,
+            tiley,
+            level.tilewidth,
+            level.tileheight
+          )
+        } else if (tile == 8) {
+          // Apple
+
+          // Draw apple background
+          // context.fillStyle = "#ffffff"
+          context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
+
+          // Draw the apple image
+          var tx = 1
+          var ty = 5
+          var tilew = 64
+          var tileh = 64
+          context.drawImage(
+            tileimage,
+            tx * tilew,
+            ty * tileh,
+            tilew,
+            tileh,
+            tilex,
+            tiley,
+            level.tilewidth,
+            level.tileheight
+          )
+        } else if (tile == 9) {
+          // Apple
+
+          // Draw apple background
+          // context.fillStyle = "#ffffff"
+          context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
+
+          // Draw the apple image
+          var tx = 1
           var ty = 6
           var tilew = 64
           var tileh = 64
