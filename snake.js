@@ -376,7 +376,7 @@ window.onload = function () {
             level.tiles[nx][ny] = 0
 
             // Add a new apple
-            // addItem()
+            addItem()
 
             // Grow the snake
             snake.grow()

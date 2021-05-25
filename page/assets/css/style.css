@@ -25,7 +25,7 @@ body {
 }
 
 #body-game {
-    /* background-image: url('../img/bg-game.png'); */
+    background-image: url('../img/bg-game.png');
     background-repeat: no-repeat;
     background-size: 100% 100vh;
 }
@@ -223,7 +223,7 @@ a:hover {
 .score-box {
     position: absolute;
     margin-top: -440px;
-    margin-left: 90px;
+    margin-left: 330px;
 }
 
 .time-box img,
