@@ -376,7 +376,7 @@ window.onload = function () {
             level.tiles[nx][ny] = 0
 
             // Add a new apple
-            addItem()
+            // addItem()
 
             // Grow the snake
             snake.grow()
@@ -385,10 +385,22 @@ window.onload = function () {
 
             if (posItem >= 2 && posItem <= 5) {
               score += 10
+              $(".score-p-10").fadeIn()
+              setTimeout(function () {
+                $(".score-p-10").toggle("slide")
+              }, 500)
             } else if (posItem >= 6 && posItem <= 7) {
               score += 5
+              $(".score-p-5").fadeIn()
+              setTimeout(function () {
+                $(".score-p-5").toggle("slide")
+              }, 500)
             } else if (posItem >= 8 && posItem <= 9) {
               score -= 5
+              $(".score-m-5").fadeIn()
+              setTimeout(function () {
+                $(".score-m-5").toggle("slide")
+              }, 500)
             }
 
             $(".snake-score").text(score)
@@ -481,7 +493,7 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          // context.fillStyle = "#ffffff"
+          context.fillStyle = "#999"
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -504,7 +516,7 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          // context.fillStyle = "#ffffff"
+          context.fillStyle = "#555"
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -527,7 +539,7 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          // context.fillStyle = "#ffffff"
+          context.fillStyle = "#555"
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -550,7 +562,7 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          // context.fillStyle = "#ffffff"
+          context.fillStyle = "#555"
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -573,7 +585,7 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          // context.fillStyle = "#ffffff"
+          context.fillStyle = "#555"
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -596,7 +608,7 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          // context.fillStyle = "#ffffff"
+          context.fillStyle = "#555"
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -619,7 +631,7 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          // context.fillStyle = "#ffffff"
+          context.fillStyle = "#555"
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -642,7 +654,7 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          // context.fillStyle = "#ffffff"
+          context.fillStyle = "#555"
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
