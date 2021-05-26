@@ -10,6 +10,12 @@ body {
     color: #ffffff;
 }
 
+.warp1920{
+    max-width: 1920px;
+    max-height: 1080px;
+    margin: 0 auto;
+}
+
 .game-box {
     position: fixed;
     width: 68%;
@@ -22,6 +28,9 @@ body {
 .viewport-z{
     position: absolute;
     z-index: -1999 !important;
+    margin-top: 130px;
+    margin-left: 100px;
+    border-radius: 20px;
 }
 
 #body-main {
@@ -292,6 +301,13 @@ a:hover {
 }
 
 @media only screen and (max-width: 900px) {
+    .viewport-z {
+        position: absolute;
+        z-index: -1999 !important;
+        margin-top: 40px;
+        margin-left: 40px;
+        border-radius: 20px;
+    }
 
     .game-box {
         position: fixed;
@@ -469,11 +485,12 @@ a:hover {
 
     .text-time,
     .text-score {
+        width: 300px;
         position: absolute;
         color: #0e0157;
-        font-size: 0.7em;
-        margin-left: 65px;
-        margin-top: -34px;
+        font-size: 1.2em;
+        margin-left: 85px;
+        margin-top: -47px;
         font-weight: 600;
     }
 
@@ -484,7 +501,7 @@ a:hover {
 
     .time-box img,
     .score-box img {
-        width: 140px;
+        width: 200px;
     }
 
     .time-box {
