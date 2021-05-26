@@ -3,13 +3,25 @@
     src: url(../font/PSL116pro.86f8c369.ttf);
 }
 
-html {
-    
-}
+html {}
 
 body {
     font-family: 'Mitr', sans-serif !important;
     color: #ffffff;
+}
+
+.game-box {
+    position: fixed;
+    width: 68%;
+    height: 76%;
+    top: 12%;
+    left: 6%;
+    z-index: -1999;
+}
+
+.viewport-z{
+    position: absolute;
+    z-index: -1999 !important;
 }
 
 #body-main {
@@ -18,7 +30,7 @@ body {
     background-size: 100%;
 }
 
-#body-content{
+#body-content {
     background-image: url('../img/bg.png');
     background-repeat: no-repeat;
     background-size: 100%;
@@ -26,6 +38,7 @@ body {
 
 #body-game {
     /* background-image: url('../img/bg-game.png'); */
+    background-color: #589e0d;
     background-repeat: no-repeat;
     background-size: 100% 100vh;
 }
@@ -34,8 +47,9 @@ body {
 a {
     text-decoration: none !important;
 }
+
 a:hover {
-    color:currentColor;
+    color: currentColor;
 }
 
 .on-desktop {
@@ -46,8 +60,8 @@ a:hover {
     display: none;
 }
 
-.mb-6{
- margin-bottom: 6em;
+.mb-6 {
+    margin-bottom: 6em;
 }
 
 #game-section,
@@ -63,7 +77,7 @@ a:hover {
     transform: translate(-50%, -50%);
 }
 
-#footer{
+#footer {
     background-image: url('../img/footer.png');
     background-size: 100%;
     background-repeat: no-repeat;
@@ -76,7 +90,7 @@ a:hover {
     z-index: 0;
 }
 
-#footer p{
+#footer p {
     position: absolute;
     left: 10px;
     bottom: 0px;
@@ -84,12 +98,12 @@ a:hover {
     font-size: 0.8em;
 }
 
-.btn-and-mascot{
+.btn-and-mascot {
     margin-top: 700px;
     z-index: 999;
 }
 
-.card-mini-info img{
+.card-mini-info img {
     width: 100%;
 }
 
@@ -133,7 +147,7 @@ a:hover {
     color: #ffc000;
 }
 
-.text-pk{
+.text-pk {
     color: #ec2d78;
 }
 
@@ -162,10 +176,11 @@ a:hover {
     border-radius: 50px;
     border: 10px solid rgba(255, 255, 255, 0.801);
 } */
-.card-time-out{
+.card-time-out {
     width: 100%;
 }
-.card-time-out img{
+
+.card-time-out img {
     width: 100%;
 }
 
@@ -175,11 +190,12 @@ a:hover {
     border-radius: 100px;
     border: 10px solid rgba(255, 255, 255, 0.801);
 }
+
 .center img {
     width: 300px;
 }
 
-.btn-rdy{
+.btn-rdy {
     text-transform: uppercase;
 }
 
@@ -188,7 +204,8 @@ a:hover {
 .htp-score-update {
     width: 100%;
 }
-.htp-img-item img{
+
+.htp-img-item img {
     width: 100%;
 }
 
@@ -196,18 +213,19 @@ a:hover {
     width: 100%;
 }
 
-.htp-content-title{
+.htp-content-title {
     font-weight: 500;
 }
 
-.htp-content-des{
+.htp-content-des {
     font-weight: 300;
 }
 
 .time-score-box {
-    width: 100%;
-    margin-top: 40px;
-    margin-left: 40px;
+    width: 600px;
+    position: fixed;
+    top: 30;
+    left: 20;
 }
 
 .time-box,
@@ -216,14 +234,15 @@ a:hover {
 }
 
 .time-box {
-    position: absolute;
-    margin-top: -440px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
 }
 
 .score-box {
-    position: absolute;
-    margin-top: -440px;
-    margin-left: 90px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
 }
 
 .time-box img,
@@ -232,7 +251,7 @@ a:hover {
 }
 
 .text-time,
-.text-score{
+.text-score {
     position: absolute;
     color: #0e0157;
     font-size: 1.75em;
@@ -245,7 +264,7 @@ a:hover {
     width: 100%;
 }
 
-.total-snake-score{
+.total-snake-score {
     width: 100%;
     position: absolute;
     font-size: 15em;
@@ -253,35 +272,44 @@ a:hover {
 }
 
 .btn-play-again img,
-.btn-exit img{
+.btn-exit img {
     width: 340px;
 }
 
-.joy-controller{
+.joy-controller {
     background-image: url('../img/Controller/Controller_Bg.png');
     background-size: 100%;
     padding: 20px;
     width: 300px;
     height: 300px;
     position: fixed;
-    right: 50px;
-    top: 170px;
+    right: 40px;
+    bottom: 40px;
 }
 
-.joy-controller img{
+.joy-controller img {
     width: 100%;
 }
 
-@media only screen and (max-width: 815px) {
+@media only screen and (max-width: 900px) {
+
+    .game-box {
+        position: fixed;
+        width: 60%;
+        height: 76%;
+        left: 6%;
+        z-index: -1999;
+    }
 
     .on-desktop {
         display: none;
     }
 
-    .on-mobile{
+    .on-mobile {
         display: block;
     }
-    #game-section-main{
+
+    #game-section-main {
         width: 100%;
         margin: 0;
         position: absolute;
@@ -290,6 +318,7 @@ a:hover {
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
+
     #game-section-info-rule {
         width: 100%;
         margin: 0;
@@ -299,6 +328,7 @@ a:hover {
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
+
     #game-section-htp {
         width: 100%;
         margin: 0;
@@ -308,6 +338,7 @@ a:hover {
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
+
     #footer {
         background-image: url('../img/footer.png');
         background-size: 100% 100%;
@@ -327,7 +358,7 @@ a:hover {
         z-index: 999;
     }
 
-    .btn-and-mascot img{
+    .btn-and-mascot img {
         width: 200px;
     }
 
@@ -380,7 +411,7 @@ a:hover {
         margin-top: 5px;
     }
 
-    .btn-right img{
+    .btn-right img {
         width: 140px;
         margin-top: -65px;
     }
@@ -405,15 +436,16 @@ a:hover {
         margin-left: 13%;
     }
 
-    .btn-right-htp{
+    .btn-right-htp {
         margin-top: -50px;
     }
+
     .btn-right-htp img {
         width: 140px;
         margin-top: 0px;
     }
 
-    .htp-score-update{
+    .htp-score-update {
         position: absolute;
         margin-top: -30px;
         margin-left: 12px;
@@ -431,14 +463,8 @@ a:hover {
         width: 140px;
     }
 
-    .navigation-btn-box{
+    .navigation-btn-box {
         margin-top: -50px;
-    }
-
-    .time-score-box{
-        width: 100%;
-        margin-left: 15px;
-        margin-top: 15px;
     }
 
     .text-time,
@@ -450,6 +476,7 @@ a:hover {
         margin-top: -34px;
         font-weight: 600;
     }
+
     .time-box,
     .score-box {
         width: 140px;
@@ -461,14 +488,15 @@ a:hover {
     }
 
     .time-box {
-        position: absolute;
-        margin-top: -170px;
+        position: fixed;
+        top: 5px;
+        left: 5px;
     }
 
     .score-box {
-        position: absolute;
-        margin-top: -170px;
-        margin-left: 170px;
+        position: fixed;
+        top: 5px;
+        left: 5px;
     }
 
     .joy-controller {
@@ -479,6 +507,6 @@ a:hover {
         height: 155px;
         position: fixed;
         right: 30px;
-        top: 30px;
+        bottom: 30px;
     }
 }
