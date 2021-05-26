@@ -1,12 +1,13 @@
 // The function gets called when the window is fully loaded
 window.onload = function () {
-  let tryAgainLink = $('.tryAgain').attr('href')
-  $('.tryAgain').attr('href', tryAgainLink + '?c=' + randRange(10000, 99999))
+  let tryAgainLink = $(".tryAgain").attr("href")
+  $(".tryAgain").attr("href", tryAgainLink + "?c=" + randRange(10000, 99999))
   // Get the canvas and context
   var canvas = document.getElementById("viewport")
 
   var context = canvas.getContext("2d")
 
+  var addSpeed = 0
   // Timing and frames per second
   var lastframe = 0
   var fpstime = 0
@@ -127,12 +128,11 @@ window.onload = function () {
     this.growsegments++
   }
 
-
   // Check we are allowed to move
   Snake.prototype.tryMove = function (dt) {
     this.movedelay += dt
     isMove = true
-    var maxmovedelay = 1 / this.speed
+    var maxmovedelay = 1 / (this.speed + addSpeed)
     if (this.movedelay > maxmovedelay) {
       return true
     }
@@ -218,7 +218,7 @@ window.onload = function () {
 
   function newGame() {
     // Initialize the snake
-    snake.init(10, 3, 1, 5, 4)
+    snake.init(10, 3, 1, 6, 4)
 
     // Generate the default level
     level.generate()
@@ -227,13 +227,11 @@ window.onload = function () {
     addItem()
     addItem()
     addItem()
-    addItem()
     addWall()
 
     // Initialize the score
     score = 0
     $(".snake-score").text(score)
-
 
     // Initialize variables
     gameover = false
@@ -338,8 +336,6 @@ window.onload = function () {
     if (snake.tryMove(dt)) {
       // Check snake collisions
 
-      addItem()
-
       // Get the coordinates of the next move
       var nextmove = snake.nextMove()
       var nx = nextmove.x
@@ -443,8 +439,8 @@ window.onload = function () {
     // Game over
     if (gameover) {
       if (isMove) {
-        $('.gameover-show').show()
-        $('.total-snake-score .score').text(score)
+        $(".gameover-show").show()
+        $(".total-snake-score .score").text(score)
       }
       context.fillStyle = "rgba(0, 0, 0, 0.5)"
       context.fillRect(0, 0, canvas.width, canvas.height)
@@ -785,13 +781,45 @@ window.onload = function () {
     }
   }
 
+  var timeResponse = 2300
+  function responseItem() {
+    if (!gameover) {
+      var d = Math.random()
+
+      var percenTrash = 0.3
+
+      if (score >= 50 && score <= 100) {
+        percenTrash = 0.45
+        addSpeed + 100
+      } else if (score > 100 && score <= 150) {
+        percenTrash = 0.6
+        addSpeed + 2
+      } else if (score > 150 && score <= 200) {
+        percenTrash = 0.7
+        addSpeed + 2
+      }
+
+      if (d < percenTrash) {
+        addItem(randRange(8, 9))
+      }
+      // 50% chance of being here
+      else {
+        addItem()
+      }
+      // 20% chance of being here
+
+      setTimeout(function () {
+        responseItem()
+      }, timeResponse)
+    }
+  }
   // Keyboard event handler
   function onKeyDown(e) {
     if (gameover) {
       if (!isMove) {
         tryNewGame()
-
       }
+      responseItem()
     } else {
       if (e.keyCode == 37 || e.keyCode == 65) {
         // Left or A
