@@ -3,14 +3,12 @@
     src: url(../font/PSL116pro.86f8c369.ttf);
 }
 
-html {}
-
 body {
     font-family: 'Mitr', sans-serif !important;
     color: #ffffff;
 }
 
-.warp1920{
+.warp1920 {
     max-width: 1920px;
     max-height: 1080px;
     margin: 0 auto;
@@ -25,17 +23,17 @@ body {
     z-index: -1999;
 }
 
-.viewport-z{
+.viewport-z {
     position: absolute;
     z-index: -1999;
-    margin-top: 8%;
-    margin-left: -7%;
+    margin-top: 330px;
+    margin-left: 50px;
     border-radius: 20px;
     border-top: 32px solid #407a09;
     border-right: 27px solid #407a09;
     border-left: 5px solid #407a09;
     border-bottom: 8px solid #407a09;
-    width: 69%;
+    transform: scale(1.35);
 }
 
 #body-main {
@@ -259,7 +257,7 @@ a:hover {
     left: 20px;
 }
 
-.score-point{
+.score-point {
     margin-left: 20px;
 }
 
@@ -333,7 +331,7 @@ a:hover {
     }
 
     .element1-right {
-        width: 420px ;
+        width: 420px;
         top: 2%;
         right: 0.5%;
     }
@@ -361,7 +359,7 @@ a:hover {
     }
 
     .element1-right {
-        width: 340px ;
+        width: 340px;
         top: 2%;
         right: 0.5%;
     }
@@ -370,12 +368,12 @@ a:hover {
 @media only screen and (max-width: 1366px) {
     .viewport-z {
         transform: scale(0.7);
-        margin-top: 20px ;
+        margin-top: 20px;
         margin-left: -105px;
     }
 
     .element1-right {
-        width: 340px ;
+        width: 340px;
         top: 2%;
         right: 0.5%;
     }
@@ -627,12 +625,12 @@ a:hover {
     .viewport-z {
         transform: scale(0.4);
         margin-top: -180px;
-        margin-left: -350px ;
+        margin-left: -350px;
     }
 
     .element1-right {
-        width: 235px ;
-        top: -1% ;
+        width: 235px;
+        top: -1%;
         right: 0.5%;
     }
 }
@@ -641,12 +639,12 @@ a:hover {
     .viewport-z {
         transform: scale(0.4);
         margin-top: -175px;
-        margin-left: -355px ;
+        margin-left: -355px;
     }
 
     .element1-right {
-        width: 200px ;
-        top: 5% ;
+        width: 200px;
+        top: 5%;
         right: 0.5%;
     }
 }
@@ -667,15 +665,13 @@ a:hover {
 
     .viewport-z {
         transform: scale(0.35);
-        margin-top: -180px ;
-        margin-left: -390px ;
+        margin-top: -180px;
+        margin-left: -390px;
     }
 
     .element1-right {
-        width: 145px ;
-        top: 5% ;
+        width: 145px;
+        top: 5%;
         right: 0.5%;
     }
 }
-
-
