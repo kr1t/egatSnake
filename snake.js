@@ -332,6 +332,8 @@ window.onload = function () {
     if (snake.tryMove(dt)) {
       // Check snake collisions
 
+      addItem()
+
       // Get the coordinates of the next move
       var nextmove = snake.nextMove()
       var nx = nextmove.x
@@ -368,7 +370,6 @@ window.onload = function () {
             level.tiles[nx][ny] = 0
 
             // Add a new apple
-            addItem()
 
             // Grow the snake
             snake.grow()
