@@ -109,7 +109,7 @@ window.onload = function () {
 
   // Snake
   var Snake = function () {
-    this.init(0, 0, 1, 10, 1)
+    this.init(0, 0, 1, 3, 1)
   }
 
   // Direction table: Up, Right, Down, Left
@@ -195,7 +195,7 @@ window.onload = function () {
 
   // Create objects
   var snake = new Snake()
-  var level = new Level(20, 14, 64, 64)
+  var level = new Level(20, 11, 64, 64)
 
   // Variables
   var score = 0 // Score
@@ -233,7 +233,7 @@ window.onload = function () {
 
   function newGame() {
     // Initialize the snake
-    snake.init(10, 10, 1, 10, 4)
+    snake.init(10, 3, 1, 10, 4)
 
     // Generate the default level
     level.generate()
