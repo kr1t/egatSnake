@@ -223,6 +223,7 @@ window.onload = function () {
     addItem()
     addItem()
     addItem()
+    addWall()
 
     // Initialize the score
     score = 0
@@ -232,14 +233,13 @@ window.onload = function () {
     gameover = false
   }
 
-  // Add an apple to the level at an empty position
-  function addItem() {
+  function baseAddItem(position, cx = false, cy = false) {
     // Loop until we have a valid apple
     var valid = false
     while (!valid) {
       // Get a random position
-      var ax = randRange(0, level.columns - 1)
-      var ay = randRange(0, level.rows - 1)
+      var ax = cx || randRange(0, level.columns - 1)
+      var ay = cy || randRange(0, level.rows - 1)
 
       // Make sure the snake doesn't overlap the new apple
       var overlap = false
@@ -258,11 +258,23 @@ window.onload = function () {
       // Tile must be empty
       if (!overlap && level.tiles[ax][ay] == 0) {
         // Add an apple at the tile position
-        level.tiles[ax][ay] = randomInteger(2, 9)
+        level.tiles[ax][ay] = position
 
         valid = true
       }
     }
+  }
+  // Add an apple to the level at an empty position
+  function addItem() {
+    baseAddItem(randomInteger(2, 9))
+  }
+
+  // Add an apple to the level at an empty position
+  function addWall() {
+    baseAddItem(10, 3, 5)
+    baseAddItem(10, 8, 4)
+    baseAddItem(10, 13, 4)
+    baseAddItem(10, 11, 8)
   }
 
   // Main loop
@@ -326,7 +338,7 @@ window.onload = function () {
       var ny = nextmove.y
 
       if (nx >= 0 && nx < level.columns && ny >= 0 && ny < level.rows) {
-        if (level.tiles[nx][ny] == 1) {
+        if (level.tiles[nx][ny] == 1 || level.tiles[nx][ny] == 10) {
           // Collision with a wall
           gameover = true
         }
@@ -441,30 +453,31 @@ window.onload = function () {
         var tilex = i * level.tilewidth
         var tiley = j * level.tileheight
 
-        // Draw tiles based on their type
-        if (tile == 0) {
-          // Empty space
-
+        function drawBg() {
           if (i % 2 == 0) {
             if (j % 2 == 0) {
-              context.fillStyle = "#333333"
-
-              // context.fillStyle = "#6fb43c"
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
             } else {
-              context.fillStyle = "#000000"
-
-              // context.fillStyle = "#92c13a"
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
             }
           } else {
             if (j % 2 == 0) {
-              // context.fillStyle = "#92c13a"
-              context.fillStyle = "#000000"
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
             } else {
-              // context.fillStyle = "#6fb43c"
-              context.fillStyle = "#333333"
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
             }
           }
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
+        }
+
+        // Draw tiles based on their type
+        if (tile == 0) {
+          drawBg()
+          // Empty space
         } else if (tile == 1) {
           // Wall
           context.fillStyle = "#407a09"
@@ -473,7 +486,23 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          context.fillStyle = "#999"
+          if (i % 2 == 0) {
+            if (j % 2 == 0) {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            } else {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            }
+          } else {
+            if (j % 2 == 0) {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            } else {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            }
+          }
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -496,7 +525,23 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          context.fillStyle = "#555"
+          if (i % 2 == 0) {
+            if (j % 2 == 0) {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            } else {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            }
+          } else {
+            if (j % 2 == 0) {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            } else {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            }
+          }
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -519,7 +564,23 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          context.fillStyle = "#555"
+          if (i % 2 == 0) {
+            if (j % 2 == 0) {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            } else {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            }
+          } else {
+            if (j % 2 == 0) {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            } else {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            }
+          }
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -542,7 +603,23 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          context.fillStyle = "#555"
+          if (i % 2 == 0) {
+            if (j % 2 == 0) {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            } else {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            }
+          } else {
+            if (j % 2 == 0) {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            } else {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            }
+          }
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -565,7 +642,23 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          context.fillStyle = "#555"
+          if (i % 2 == 0) {
+            if (j % 2 == 0) {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            } else {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            }
+          } else {
+            if (j % 2 == 0) {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            } else {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            }
+          }
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -588,7 +681,23 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          context.fillStyle = "#555"
+          if (i % 2 == 0) {
+            if (j % 2 == 0) {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            } else {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            }
+          } else {
+            if (j % 2 == 0) {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            } else {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            }
+          }
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -611,7 +720,23 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          context.fillStyle = "#555"
+          if (i % 2 == 0) {
+            if (j % 2 == 0) {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            } else {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            }
+          } else {
+            if (j % 2 == 0) {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            } else {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            }
+          }
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
@@ -634,11 +759,66 @@ window.onload = function () {
           // Apple
 
           // Draw apple background
-          context.fillStyle = "#555"
+          if (i % 2 == 0) {
+            if (j % 2 == 0) {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            } else {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            }
+          } else {
+            if (j % 2 == 0) {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            } else {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            }
+          }
           context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
 
           // Draw the apple image
           var tx = 1
+          var ty = 6
+          var tilew = 64
+          var tileh = 64
+          context.drawImage(
+            tileimage,
+            tx * tilew,
+            ty * tileh,
+            tilew,
+            tileh,
+            tilex,
+            tiley,
+            level.tilewidth,
+            level.tileheight
+          )
+        } else if (tile == 10) {
+          // Apple
+
+          // Draw apple background
+          if (i % 2 == 0) {
+            if (j % 2 == 0) {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            } else {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            }
+          } else {
+            if (j % 2 == 0) {
+              context.fillStyle = "#92c13a"
+              // context.fillStyle = "#000000"
+            } else {
+              context.fillStyle = "#6fb43c"
+              // context.fillStyle = "#333333"
+            }
+          }
+          context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
+
+          // Draw the apple image
+          var tx = 2
           var ty = 6
           var tilew = 64
           var tileh = 64
