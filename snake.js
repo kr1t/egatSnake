@@ -218,7 +218,7 @@ window.onload = function () {
 
   function newGame() {
     // Initialize the snake
-    snake.init(10, 3, 1, 8, 4)
+    snake.init(10, 3, 1, 5, 4)
 
     // Generate the default level
     level.generate()
@@ -790,13 +790,13 @@ window.onload = function () {
 
       if (score >= 50 && score <= 100) {
         percenTrash = 0.45
-        addSpeed + 100
+        addSpeed = 2
       } else if (score > 100 && score <= 150) {
         percenTrash = 0.6
-        addSpeed + 2
+        addSpeed = 4
       } else if (score > 150 && score <= 200) {
         percenTrash = 0.7
-        addSpeed + 2
+        addSpeed = 6
       }
 
       if (d < percenTrash) {
