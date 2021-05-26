@@ -19,6 +19,10 @@ body {
     z-index: -1999;
 }
 
+.viewport-z{
+    z-index: -1999 !important;
+}
+
 #body-main {
     background-image: url('../img/main-menu.png');
     background-repeat: no-repeat;
