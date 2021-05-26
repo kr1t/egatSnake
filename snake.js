@@ -1,5 +1,7 @@
 // The function gets called when the window is fully loaded
 window.onload = function () {
+  let tryAgainLink = $('.tryAgain').attr('href')
+  $('.tryAgain').attr('href', tryAgainLink + '?c=' + randRange(10000, 99999))
   // Get the canvas and context
   var canvas = document.getElementById("viewport")
 
@@ -13,6 +15,7 @@ window.onload = function () {
 
   var initialized = false
 
+  let isMove = false
   // Images
   var images = []
   var tileimage
@@ -124,9 +127,11 @@ window.onload = function () {
     this.growsegments++
   }
 
+
   // Check we are allowed to move
   Snake.prototype.tryMove = function (dt) {
     this.movedelay += dt
+    isMove = true
     var maxmovedelay = 1 / this.speed
     if (this.movedelay > maxmovedelay) {
       return true
@@ -228,6 +233,7 @@ window.onload = function () {
     // Initialize the score
     score = 0
     $(".snake-score").text(score)
+
 
     // Initialize variables
     gameover = false
@@ -435,12 +441,16 @@ window.onload = function () {
 
     // Game over
     if (gameover) {
+      if (isMove) {
+        $('.gameover-show').show()
+        $('.total-snake-score .score').text(score)
+      }
       context.fillStyle = "rgba(0, 0, 0, 0.5)"
       context.fillRect(0, 0, canvas.width, canvas.height)
 
       context.fillStyle = "#ffffff"
-      context.font = "24px Verdana"
-      drawCenterText("กดที่ปุ่มเพื่อเริ่ม!", 0, canvas.height / 2, canvas.width)
+      context.font = "36px PslFont"
+      drawCenterText("กดที่ปุ่มบังคับเพื่อเริ่ม!", 0, canvas.height / 2, canvas.width)
     }
   }
 
@@ -777,7 +787,10 @@ window.onload = function () {
   // Keyboard event handler
   function onKeyDown(e) {
     if (gameover) {
-      tryNewGame()
+      if (!isMove) {
+        tryNewGame()
+
+      }
     } else {
       if (e.keyCode == 37 || e.keyCode == 65) {
         // Left or A
