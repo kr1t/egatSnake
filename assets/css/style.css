@@ -27,10 +27,15 @@ body {
 
 .viewport-z{
     position: absolute;
-    z-index: -1999 !important;
-    margin-top: 130px;
-    margin-left: 100px;
+    z-index: -1999;
+    margin-top: 8%;
+    margin-left: -7%;
     border-radius: 20px;
+    border-top: 32px solid #407a09;
+    border-right: 27px solid #407a09;
+    border-left: 5px solid #407a09;
+    border-bottom: 8px solid #407a09;
+    width: 69%;
 }
 
 #body-main {
@@ -254,6 +259,11 @@ a:hover {
     left: 20px;
 }
 
+.score-point{
+    margin-left: 20px;
+}
+
+
 .time-box img,
 .score-box img {
     width: 300px;
@@ -301,13 +311,84 @@ a:hover {
     width: 100%;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1920px) {
+    .viewport-z {
+        transform: scale(1);
+        margin-top: 110px;
+        margin-left: 100px;
+    }
+
+    .element1-right {
+        width: 420px;
+        top: 2%;
+        right: 0.5%;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .viewport-z {
+        transform: scale(0.85);
+        margin-top: 70px;
+        margin-left: -20px;
+    }
+
+    .element1-right {
+        width: 420px ;
+        top: 2%;
+        right: 0.5%;
+    }
+}
+
+@media only screen and (max-width: 1536px) {
+    .viewport-z {
+        transform: scale(0.8);
+        margin-top: 55px;
+        margin-left: -35px;
+    }
+
+    .element1-right {
+        width: 420px;
+        top: 2%;
+        right: 0.5%;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .viewport-z {
+        transform: scale(0.75);
+        margin-top: 65px;
+        margin-left: -75px;
+    }
+
+    .element1-right {
+        width: 340px ;
+        top: 2%;
+        right: 0.5%;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .viewport-z {
+        transform: scale(0.7);
+        margin-top: 20px ;
+        margin-left: -105px;
+    }
+
+    .element1-right {
+        width: 340px ;
+        top: 2%;
+        right: 0.5%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
     .viewport-z {
         position: absolute;
-        z-index: -1999 !important;
-        margin-top: 40px;
-        margin-left: 40px;
+        z-index: -1999;
+        margin-top: -95px;
+        margin-left: -250px;
         border-radius: 20px;
+        transform: scale(0.55);
     }
 
     .game-box {
@@ -528,3 +609,73 @@ a:hover {
         bottom: 30px;
     }
 }
+
+@media only screen and (max-width: 812px) {
+
+    .time-box img,
+    .score-box img {
+        width: 140px;
+    }
+
+    .text-time,
+    .text-score {
+        font-size: 0.75rem;
+        margin-left: 63px;
+        margin-top: -33px;
+    }
+
+    .viewport-z {
+        transform: scale(0.4);
+        margin-top: -180px;
+        margin-left: -350px ;
+    }
+
+    .element1-right {
+        width: 235px ;
+        top: -1% ;
+        right: 0.5%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .viewport-z {
+        transform: scale(0.4);
+        margin-top: -175px;
+        margin-left: -355px ;
+    }
+
+    .element1-right {
+        width: 200px ;
+        top: 5% ;
+        right: 0.5%;
+    }
+}
+
+@media only screen and (max-width: 667px) {
+
+    .time-box img,
+    .score-box img {
+        width: 140px;
+    }
+
+    .text-time,
+    .text-score {
+        font-size: 0.75rem;
+        margin-left: 63px;
+        margin-top: -33px;
+    }
+
+    .viewport-z {
+        transform: scale(0.35);
+        margin-top: -180px ;
+        margin-left: -390px ;
+    }
+
+    .element1-right {
+        width: 145px ;
+        top: 5% ;
+        right: 0.5%;
+    }
+}
+
+
