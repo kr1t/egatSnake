@@ -92,7 +92,7 @@ window.onload = function () {
 
   // Snake
   var Snake = function () {
-    this.init(0, 0, 1, 3, 1)
+    this.init(0, 0, 1, 10, 1)
   }
 
   // Direction table: Up, Right, Down, Left
@@ -218,7 +218,7 @@ window.onload = function () {
 
   function newGame() {
     // Initialize the snake
-    snake.init(10, 3, 1, 10, 4)
+    snake.init(10, 3, 1, 5, 4)
 
     // Generate the default level
     level.generate()
@@ -338,6 +338,8 @@ window.onload = function () {
     if (snake.tryMove(dt)) {
       // Check snake collisions
 
+      addItem()
+
       // Get the coordinates of the next move
       var nextmove = snake.nextMove()
       var nx = nextmove.x
@@ -374,7 +376,6 @@ window.onload = function () {
             level.tiles[nx][ny] = 0
 
             // Add a new apple
-            addItem()
 
             // Grow the snake
             snake.grow()
@@ -776,7 +777,7 @@ window.onload = function () {
 
     if (gameover) {
       // Start a new game
-      location.reload()
+      // location.reload()
       tryNewGame()
     } else {
       // Change the direction of the snake
