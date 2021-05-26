@@ -218,7 +218,7 @@ window.onload = function () {
 
   function newGame() {
     // Initialize the snake
-    snake.init(10, 3, 1, 6, 4)
+    snake.init(10, 3, 1, 8, 4)
 
     // Generate the default level
     level.generate()
