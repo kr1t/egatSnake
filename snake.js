@@ -89,7 +89,7 @@ window.onload = function () {
 
   // Snake
   var Snake = function () {
-    this.init(0, 0, 1, 3, 1)
+    this.init(0, 0, 1, 10, 1)
   }
 
   // Direction table: Up, Right, Down, Left
@@ -213,7 +213,7 @@ window.onload = function () {
 
   function newGame() {
     // Initialize the snake
-    snake.init(10, 3, 1, 10, 4)
+    snake.init(10, 3, 1, 5, 4)
 
     // Generate the default level
     level.generate()
@@ -766,7 +766,7 @@ window.onload = function () {
 
     if (gameover) {
       // Start a new game
-      location.reload()
+      // location.reload()
       tryNewGame()
     } else {
       // Change the direction of the snake
