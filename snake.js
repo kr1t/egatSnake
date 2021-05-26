@@ -78,7 +78,7 @@ window.onload = function () {
       for (var j = 0; j < this.rows; j++) {
         if (i == 0 || i == this.columns - 1 || j == 0 || j == this.rows - 1) {
           // Add walls at the edges of the level
-          this.tiles[i][j] = 1
+          this.tiles[i][j] = 0
         } else {
           // Add empty space
           this.tiles[i][j] = 0
