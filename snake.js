@@ -394,8 +394,6 @@ window.onload = function () {
                 $(".score-m-5").toggle("slide")
               }, 500)
             }
-
-            $(".snake-score").text(score)
           }
         }
       } else {
@@ -406,6 +404,8 @@ window.onload = function () {
       if (gameover) {
         gameovertime = 0
       }
+
+      $(".snake-score").text(score)
     }
   }
 
@@ -444,6 +444,7 @@ window.onload = function () {
     }
   }
 
+  let isDrawBgSuccess = false
   // Draw the level tiles
   function drawLevel() {
     for (var i = 0; i < level.columns; i++) {
@@ -456,25 +457,28 @@ window.onload = function () {
         // Draw tiles based on their type
         if (tile != 1) {
           // Draw apple background
-          if (i % 2 == 0) {
-            if (j % 2 == 0) {
-              context.fillStyle = "#6fb43c"
-              // context.fillStyle = "#333333"
+          if (!isDrawBgSuccess) {
+            if (i % 2 == 0) {
+              if (j % 2 == 0) {
+                context.fillStyle = "#6fb43c"
+                // context.fillStyle = "#333333"
+              } else {
+                context.fillStyle = "#92c13a"
+                // context.fillStyle = "#000000"
+              }
             } else {
-              context.fillStyle = "#92c13a"
-              // context.fillStyle = "#000000"
+              if (j % 2 == 0) {
+                context.fillStyle = "#92c13a"
+                // context.fillStyle = "#000000"
+              } else {
+                context.fillStyle = "#6fb43c"
+                // context.fillStyle = "#333333"
+              }
             }
-          } else {
-            if (j % 2 == 0) {
-              context.fillStyle = "#92c13a"
-              // context.fillStyle = "#000000"
-            } else {
-              context.fillStyle = "#6fb43c"
-              // context.fillStyle = "#333333"
-            }
+            // context.fillStyle = "#6fb43c"
+            context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
+            // Empty space
           }
-          context.fillRect(tilex, tiley, level.tilewidth, level.tileheight)
-          // Empty space
         }
 
         if (tile == 1) {
@@ -762,6 +766,7 @@ window.onload = function () {
 
     if (gameover) {
       // Start a new game
+      location.reload()
       tryNewGame()
     } else {
       // Change the direction of the snake
