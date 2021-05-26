@@ -14,6 +14,10 @@ body {
     margin: 0 auto;
 }
 
+.gameover-show{
+    display: none;
+}
+
 .game-box {
     position: fixed;
     width: 68%;
