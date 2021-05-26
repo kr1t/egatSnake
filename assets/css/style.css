@@ -262,6 +262,7 @@ a:hover {
 .text-time,
 .text-score {
     position: absolute;
+    width: 400px;
     color: #0e0157;
     font-size: 1.75em;
     margin-left: 130px;
