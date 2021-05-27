@@ -813,6 +813,40 @@ window.onload = function () {
       }, timeResponse)
     }
   }
+
+  $(".joy-left").click(function () {
+    if (snake.direction != 1) {
+      snake.direction = 3
+    }
+  })
+
+  $(".joy-top").click(function () {
+    if (snake.direction != 2) {
+      snake.direction = 0
+    }
+  })
+
+  $(".joy-right").click(function () {
+    if (snake.direction != 3) {
+      snake.direction = 1
+    }
+  })
+
+  $(".joy-down").click(function () {
+    if (snake.direction != 0) {
+      snake.direction = 2
+    }
+  })
+
+  $(".joycon").click(function () {
+    if (gameover) {
+      if (!isMove) {
+        tryNewGame()
+      }
+      responseItem()
+    }
+  })
+
   // Keyboard event handler
   function onKeyDown(e) {
     if (gameover) {
