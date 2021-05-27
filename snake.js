@@ -794,7 +794,7 @@ window.onload = function () {
       } else if (score > 100 && score <= 150) {
         percenTrash = 0.6
         addSpeed = 4
-      } else if (score > 150 && score <= 200) {
+      } else if (score > 150) {
         percenTrash = 0.7
         addSpeed = 6
       }
