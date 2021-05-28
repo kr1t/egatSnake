@@ -301,7 +301,6 @@ a:hover {
 .joy-controller {
     background-image: url('../img/Controller/Controller_Bg.png');
     background-size: 100%;
-    padding: 20px;
     width: 300px;
     height: 300px;
     position: fixed;
@@ -311,6 +310,45 @@ a:hover {
 
 .joy-controller img {
     width: 100%;
+    margin-top: 3px;
+}
+
+
+
+.joy-top{
+    filter: drop-shadow(1px 1px 0 #fff) drop-shadow(2px 2px 0 rgb(63, 63, 63));
+    cursor: pointer;
+}
+
+.joy-left {
+    filter: drop-shadow(1px 1px 0 #fff) drop-shadow(2px 2px 0 rgb(63, 63, 63));
+    cursor: pointer;
+}
+
+.joy-right {
+    filter: drop-shadow(1px 1px 0 #fff) drop-shadow(2px 2px 0 rgb(63, 63, 63));
+    cursor: pointer;
+}
+
+.joy-down {
+    filter: drop-shadow(1px 1px 0 #fff) drop-shadow(2px 2px 0 rgb(63, 63, 63));
+    cursor: pointer;
+}
+
+.joy-top:active,
+.joy-left:active,
+.joy-right:active,
+.joy-down:active {
+    -webkit-filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 white);
+    filter:drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 white);
+}
+
+.joy-top:before,
+.joy-left:before,
+.joy-right:before,
+.joy-down:before {
+    -webkit-filter: drop-shadow(1px 1px 0 rgb(75, 4, 4)) drop-shadow(-1px -1px 0 black);
+    filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
 }
 
 @media only screen and (max-width: 1920px) {
@@ -603,12 +641,13 @@ a:hover {
     .joy-controller {
         background-image: url('../img/Controller/Controller_Bg.png');
         background-size: 100%;
-        padding: 20px;
         width: 155px;
         height: 155px;
         position: fixed;
         right: 30px;
         bottom: 30px;
+        padding-top: 5px;
+        padding-right: 1px;
     }
 }
 
