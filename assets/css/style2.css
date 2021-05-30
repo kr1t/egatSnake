@@ -20,6 +20,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    color: #f1f1f1;
+    background-color: #272727c5;
+    padding: 50px 20px;
 }
 
 #bg-home {
@@ -264,9 +267,9 @@ body {
 .text-score{
     width: 300px;
     position: absolute;
-    top: 47%;
+    top: 46%;
     left: 43%;
-    font-size: 1.35rem;
+    font-size: 1rem;
 }
 
 .text-score p{
@@ -275,7 +278,7 @@ body {
 
 .score{
     margin-top: -4px;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     font-family: PslFont;
     src: url(../font/PSL116pro.86f8c369.ttf);
 }
@@ -331,10 +334,11 @@ body {
     .text-score {
         top: 42%;
         left: 43%;
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
     .score{
-        font-size: 2.2rem;
+        margin-top: 2px;
+        font-size: 2rem;
     }
     .viewport-z {
         top: 15%;
@@ -394,7 +398,10 @@ body {
 @media only screen and (max-device-width: 768px) and (orientation: portrait) {
     .rotate-plz{
         display: block;
-        background-color: #1b1b1b85;
+        background-image: url('../img/bg.png');
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-color: #272727;
         min-width: 100vw;
         min-height: 100vh;
     }
