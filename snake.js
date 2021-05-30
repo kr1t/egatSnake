@@ -452,7 +452,7 @@ window.onload = function () {
       context.fillStyle = "#ffffff"
       context.font = "11rem PslFont"
 
-      drawCenterText("3", 0, canvas.height / 2, canvas.width)
+      drawCenterText("Start", 0, canvas.height / 2, canvas.width)
     }
   }
 
@@ -779,6 +779,7 @@ window.onload = function () {
     if (gameover) {
       // Start a new game
       // location.reload()
+
       tryNewGame()
     } else {
       // Change the direction of the snake
