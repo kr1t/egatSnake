@@ -1,4 +1,6 @@
 // The function gets called when the window is fully loaded
+var audioBg = new Audio("assets/sound/bg.mp3")
+
 window.onload = function () {
   let tryAgainLink = $(".tryAgain").attr("href")
   $(".tryAgain").attr("href", tryAgainLink + "?c=" + randRange(10000, 99999))
@@ -212,6 +214,7 @@ window.onload = function () {
   function tryNewGame() {
     if (gameovertime > gameoverdelay) {
       newGame()
+      audioBg.play()
       gameover = false
     }
   }
@@ -238,7 +241,7 @@ window.onload = function () {
   }
 
   function baseAddItem(position, cx = false, cy = false) {
-    // Loop until we have a valid apple
+    // Loop until we have a valid item
     var valid = false
     while (!valid) {
       // Get a random position
@@ -261,7 +264,7 @@ window.onload = function () {
 
       // Tile must be empty
       if (!overlap && level.tiles[ax][ay] == 0) {
-        // Add an apple at the tile position
+        // Add an item at the tile position
         level.tiles[ax][ay] = position
 
         valid = true
@@ -273,7 +276,7 @@ window.onload = function () {
     baseAddItem(randomInteger(2, 9))
   }
 
-  // Add an apple to the level at an empty position
+  // Add an item to the level at an empty position
   function addWall() {
     baseAddItem(10, 3, 5)
     baseAddItem(10, 8, 4)
@@ -365,13 +368,13 @@ window.onload = function () {
           // Move the snake
           snake.move()
 
-          // Check collision with an apple
+          // Check collision with an item
           if (level.tiles[nx][ny] >= 2) {
             let posItem = level.tiles[nx][ny]
-            // Remove the apple
+            // Remove the item
             level.tiles[nx][ny] = 0
 
-            // Add a new apple
+            // Add a new item
 
             // Grow the snake
             snake.grow()
@@ -427,6 +430,7 @@ window.onload = function () {
     framecount++
   }
 
+  var countTime = 3
   // Render the game
   function render() {
     // Draw background
@@ -447,6 +451,7 @@ window.onload = function () {
 
       context.fillStyle = "#ffffff"
       context.font = "11rem PslFont"
+
       drawCenterText("3", 0, canvas.height / 2, canvas.width)
     }
   }
@@ -463,7 +468,7 @@ window.onload = function () {
 
         // Draw tiles based on their type
         if (tile != 1) {
-          // Draw apple background
+          // Draw item background
           if (!isDrawBgSuccess) {
             if (i % 2 == 0) {
               if (j % 2 == 0) {
@@ -511,7 +516,7 @@ window.onload = function () {
             level.tileheight
           )
         } else if (tile == 3) {
-          // Draw the apple image
+          // Draw the item image
           var tx = 0
           var ty = 4
           var tilew = 64
@@ -528,7 +533,7 @@ window.onload = function () {
             level.tileheight
           )
         } else if (tile == 4) {
-          // Draw the apple image
+          // Draw the item image
           var tx = 0
           var ty = 5
           var tilew = 64
@@ -545,7 +550,7 @@ window.onload = function () {
             level.tileheight
           )
         } else if (tile == 5) {
-          // Draw the apple image
+          // Draw the item image
           var tx = 0
           var ty = 6
           var tilew = 64
@@ -562,7 +567,7 @@ window.onload = function () {
             level.tileheight
           )
         } else if (tile == 6) {
-          // Draw the apple image
+          // Draw the item image
           var tx = 1
           var ty = 3
           var tilew = 64
@@ -579,7 +584,7 @@ window.onload = function () {
             level.tileheight
           )
         } else if (tile == 7) {
-          // Draw the apple image
+          // Draw the item image
           var tx = 1
           var ty = 4
           var tilew = 64
@@ -596,7 +601,7 @@ window.onload = function () {
             level.tileheight
           )
         } else if (tile == 8) {
-          // Draw the apple image
+          // Draw the item image
           var tx = 1
           var ty = 5
           var tilew = 64
@@ -613,7 +618,7 @@ window.onload = function () {
             level.tileheight
           )
         } else if (tile == 9) {
-          // Draw the apple image
+          // Draw the item image
           var tx = 1
           var ty = 6
           var tilew = 64
@@ -630,7 +635,7 @@ window.onload = function () {
             level.tileheight
           )
         } else if (tile == 10) {
-          // Draw the apple image
+          // Draw the item image
           var tx = 2
           var ty = 6
           var tilew = 64
