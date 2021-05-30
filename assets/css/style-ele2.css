@@ -1,0 +1,287 @@
+.element-top{
+    width: 100%;
+    height: 12%;
+    background-color: #210ba15d;
+    position: absolute;
+    top: 0;
+    z-index: -999;
+}
+.element-left {
+    width: 6%;
+    height: 76%;
+    background-color: #1fac1377;
+    position: absolute;
+    top: 12%;
+    z-index: -999;
+}
+.element-right {
+   width: 27%;
+   height: 100%;
+   background-color: #18d8d877;
+   position: absolute;
+   left: 73%;
+   top: 0%;
+   z-index: -999;
+}
+.element-bottom {
+    width: 100%;
+    height: 12%;
+    background-color: #57120188;
+    position: absolute;
+    bottom: 0;
+    z-index: -999;
+}
+
+/* --------------------Elements-------------------- */
+
+.ele{
+    position: absolute;
+    z-index: -999;
+}
+
+.mas {
+    position: absolute;
+    z-index: -998 !important;
+}
+
+.mas1-bottom {
+    width: 15%;
+    bottom: 0;
+    left: 2.5%;
+    z-index: 999;
+}
+.mas2-bottom {
+    width: 19%;
+    bottom: 0;
+    right: 15.5%;
+    z-index: 999;
+}
+
+/* --------------------Top-------------------- */
+.element1-top{
+    width: 4%;
+    top: -1%;
+    left: -0.5%;
+}
+.element2-top {
+    width: 4%;
+    top: -3%;
+    left: 4%;
+}
+
+.element3-top {
+    width: 4%;
+    top: -0.5%;
+    left: 10%;
+}
+
+.element4-top {
+    width: 4%;
+    top: -5%;
+    left: 25%;
+}
+
+.element5-top {
+    width: 4%;
+    top: -3%;
+    left: 29%;
+}
+
+.element6-top {
+    width: 4%;
+    top: -3%;
+    left: 37%;
+}
+
+.element7-top {
+    width: 4%;
+    top: -3%;
+    left: 44.5%;
+}
+
+.element8-top {
+    width: 3%;
+    top: 3%;
+    left: 52%;
+}
+
+.element9-top {
+    width: 3%;
+    top: -0.5%;
+    left: 57%;
+    transform: scaleX(-1);
+}
+
+.element10-top {
+    width: 3%;
+    top: 4%;
+    left: 61%;
+}
+
+.element11-top {
+    width: 3%;
+    top: 2%;
+    left: 66%;
+    transform: scaleX(-1);
+}
+
+.element12-top {
+    width: 4%;
+    top: -2.5%;
+    left: 71%;
+}
+
+.element13-top {
+    width: 5%;
+    top: -3%;
+    left: 92%;
+}
+/* --------------------Left-------------------- */
+.element1-left {
+    width: 65%;
+    top: 4%;
+    left: 1%;
+}
+.element2-left {
+    width: 40%;
+    top: 25%;
+    left: 24.5%;
+}
+.element3-left {
+    width: 40%;
+    top: 35%;
+    left: 23.5%;
+}
+.element4-left {
+    width: 40%;
+    top: 50%;
+    left: 22%;
+}
+.element5-left {
+    width: 55%;
+    top: 65%;
+    left: 18%;
+}
+.element6-left {
+    width: 55%;
+    top: 79%;
+    left: 14.5%;
+}
+/* --------------------Right-------------------- */
+.element1-right {
+    transform: scale(1);
+    width: 92%;
+    top: 2%;
+    right: 0.5%;
+}
+
+.element2-right {
+    width: 13%;
+    top: 51%;
+    right: 60.5%;
+}
+
+.element3-right {
+    width: 15%;
+    top: 64%;
+    right: 1%;
+    z-index: -9999;
+}
+
+/* --------------------Bottom-------------------- */
+.element1-bottom {
+    width: 4%;
+    bottom: 5%;
+    left: -0.5%;
+}
+
+.element2-bottom {
+    width: 4%;
+    bottom: -3%;
+    left: 0.5%;
+}
+
+.element3-bottom {
+    width: 4%;
+    bottom: 1%;
+    left: 5%;
+}
+
+.element4-bottom {
+    width: 4%;
+    bottom: 1%;
+    left: 15%;
+}
+
+.element5-bottom {
+    width: 4%;
+    bottom: 2%;
+    left: 20%;
+}
+
+.element6-bottom {
+    width: 4%;
+    bottom: 1%;
+    left: 25%;
+}
+
+.element7-bottom {
+    width: 2.5%;
+    bottom: 6%;
+    left: 29%;
+}
+
+.element8-bottom {
+    width: 2.54%;
+    bottom: 1%;
+    left: 31%;
+}
+
+.element9-bottom {
+    width: 2.5%;
+    bottom: 7%;
+    left: 33%;
+}
+
+.element10-bottom {
+    width: 2.5%;
+    bottom: 1%;
+    left: 36%;
+}
+
+.element11-bottom {
+    width: 4%;
+    bottom: 2%;
+    left: 40%;
+}
+
+.element12-bottom {
+    width: 4%;
+    bottom: 0.5%;
+    left: 45%;
+}
+
+.element13-bottom {
+    width: 3%;
+    bottom: 4.5%;
+    left: 51%;
+}
+
+.element14-bottom {
+    width: 3%;
+    bottom: 1.5%;
+    left: 54%;
+}
+
+.element15-bottom {
+    width: 3%;
+    bottom: 0.5%;
+    left: 59%;
+}
+
+.element16-bottom {
+    width: 3%;
+    bottom: 4%;
+    left: 64%;
+    transform: scaleX(-1);
+}

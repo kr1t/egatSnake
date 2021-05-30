@@ -1,0 +1,180 @@
+@font-face {
+    font-family: PslFont;
+    src: url(../font/PSL116pro.86f8c369.ttf);
+}
+
+body {
+    font-family: 'Mitr', sans-serif !important;
+    color: #ffffff;
+}
+
+#green-bg{
+    background-color: #589e0d;
+}
+
+.warpRatio {
+    width: 100vw;
+    height: 56.25vw;
+    /* height:width ratio = 9/16 = .5625  */
+    background: pink;
+    max-height: 100vh;
+    max-width: 177.78vh;
+    /* 16/9 = 1.778 */
+    margin: auto;
+    position: absolute;
+    top:0;
+    bottom:0;
+    /* vertical center */
+    left:0;
+    right:0;
+    /* horizontal center */
+    z-index: -1999;
+    overflow: hidden;
+}
+
+.viewport-z {
+    width: 70%;
+    position: absolute;
+    z-index: -1999;
+    top: 13%;
+    left: 6%;
+    border-radius: 20px;
+    border-top: 32px solid #407a09;
+    border-right: 27px solid #407a09;
+    border-left: 5px solid #407a09;
+    border-bottom: 8px solid #407a09;
+    transform: scale(1);
+}
+
+.content {
+    position: relative;
+    padding: 6vw;
+    width: 50%;
+    margin: auto;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.joy-controller {
+    background-image: url(../img/Controller/Controller_Bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 23%;
+    height: 45%;
+    position: absolute;
+    right: 10px;
+    bottom: -20px;
+    float: right;
+    padding: 10px;
+}
+
+.joy-controller img {
+    width: 100%;
+    margin-top: 3px;
+}
+
+.joy-top {
+    filter: drop-shadow(1px 1px 0 #fff) drop-shadow(2px 2px 0 rgb(63, 63, 63));
+    cursor: pointer;
+}
+
+.joy-left {
+    filter: drop-shadow(1px 1px 0 #fff) drop-shadow(2px 2px 0 rgb(63, 63, 63));
+    cursor: pointer;
+}
+
+.joy-right {
+    filter: drop-shadow(1px 1px 0 #fff) drop-shadow(2px 2px 0 rgb(63, 63, 63));
+    cursor: pointer;
+}
+
+.joy-down {
+    filter: drop-shadow(1px 1px 0 #fff) drop-shadow(2px 2px 0 rgb(63, 63, 63));
+    cursor: pointer;
+}
+
+.joy-top:active,
+.joy-left:active,
+.joy-right:active,
+.joy-down:active {
+    -webkit-filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 white);
+    filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 white);
+}
+
+.joy-top:before,
+.joy-left:before,
+.joy-right:before,
+.joy-down:before {
+    -webkit-filter: drop-shadow(1px 1px 0 rgb(75, 4, 4)) drop-shadow(-1px -1px 0 black);
+    filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
+}
+
+.score-box {
+    width: 20%;
+}
+
+.score-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.score-point {
+    margin-left: 20px;
+}
+
+.score-box img {
+    width: 100%;
+}
+
+.text-score{
+    width: 300px;
+    position: absolute;
+    top: 47%;
+    left: 43%;
+    font-size: 1.35rem;
+}
+
+.text-score p{
+    margin-top: 9px;
+}
+
+.score{
+    margin-top: -4px;
+    font-size: 2.8rem;
+    font-family: PslFont;
+    src: url(../font/PSL116pro.86f8c369.ttf);
+}
+
+@media only screen and (max-width: 1024px) {
+    .text-score {
+        top: 41%;
+        left: 43%;
+        font-size: 1.15rem;
+    }
+    .score{
+        font-size: 2.5rem;
+    }
+    .viewport-z {
+        top: 15%;
+        border-radius: 10px;
+        border-top: 14px solid #407a09;
+        border-right: 11px solid #407a09;
+        border-left: 3px solid #407a09;
+        border-bottom: 5px solid #407a09;
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .text-score {
+        top: 37%;
+        left: 43%;
+        font-size: 0.95rem;
+    }
+
+    .score {
+        margin-top: 2px;
+        font-size: 1.85rem;
+    }
+}

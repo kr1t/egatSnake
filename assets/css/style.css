@@ -6,6 +6,7 @@
 body {
     font-family: 'Mitr', sans-serif !important;
     color: #ffffff;
+    overflow: hidden;
 }
 
 .warp1920 {
@@ -44,12 +45,14 @@ body {
     background-image: url('../img/main-menu.png');
     background-repeat: no-repeat;
     background-size: 100%;
+    background-color: #589e0d;
 }
 
 #body-content {
     background-image: url('../img/bg.png');
     background-repeat: no-repeat;
     background-size: 100%;
+    background-color: #589e0d;
 }
 
 #body-game {
@@ -103,7 +106,7 @@ a:hover {
     width: 100%;
     color: rgb(236, 236, 236);
     height: 74px;
-    z-index: 0;
+    z-index: -999;
 }
 
 #footer p {
@@ -366,6 +369,11 @@ a:hover {
 }
 
 @media only screen and (max-width: 1600px) {
+    .card-mini-info img {
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 70px;
+    }
     .viewport-z {
         transform: scale(0.85);
         margin-top: 70px;
@@ -544,9 +552,9 @@ a:hover {
     } */
 
     .card-mini-info img {
-        width: 80%;
-        margin-left: 10%;
-        margin-top: 5px;
+        width: 75%;
+        margin-left: 15%;
+        margin-top: 35px;
     }
 
     .btn-right img {
