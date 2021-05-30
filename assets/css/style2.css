@@ -317,29 +317,15 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* -------------------------- Footer -------------------------- */
-#footer {
-    background-image: url('../img/footer.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: rgb(236, 236, 236);
-    height: 10%;
-    z-index: -999;
+@media only screen and (min-height: 939px) {
+    #game-section-score {
+        width: 70%;
+        margin: 0;
+        position: absolute;
+        top: 19%;
+        left: 14%;
+    }
 }
-
-#footer p {
-    position: absolute;
-    left: 10px;
-    bottom: 1%;
-    font-weight: 200;
-    font-size: 0.7rem;
-    margin-bottom: 0.5rem;
-}
-/* -------------------------- End Footer -------------------------- */
 
 @media only screen and (max-width: 1024px) {
     .text-score {
@@ -360,9 +346,9 @@ body {
         transform: scale(1);
     }
     .score-gameover {
-        font-size: 6rem;
+        font-size: 4rem;
         position: fixed;
-        top: 45%;
+        top: 44%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
