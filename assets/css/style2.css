@@ -12,6 +12,35 @@ body {
     display: none;
 }
 
+.column-joy {
+    float: left;
+    width: 33.33%;
+    padding: 2px;
+    height: 33.33%;
+    /* Should be removed. Only for demonstration */
+}
+
+.column-joy2 {
+    float: left;
+    width: 33.33%;
+    height: 26.33%;
+    /* Should be removed. Only for demonstration */
+}
+
+.column-joy2 img{
+    height: 100%;
+}
+.column-joy img {
+    width: 100%;
+}
+
+/* Clear floats after the columns */
+.row-joy:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .rotate-plz h5{
     width: 100%;
     font-size: 2rem;
@@ -197,17 +226,16 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     width: 23%;
-    height: 48%;
+    height: 41%;
     position: absolute;
     right: 10px;
-    bottom: -20px;
+    bottom: 8px;
     float: right;
     padding: 10px;
 }
 
 .joy-controller img {
     width: 100%;
-    margin-top: 3px;
 }
 
 .joy-top {
