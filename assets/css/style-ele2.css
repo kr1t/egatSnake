@@ -1,7 +1,7 @@
 .element-top{
     width: 100%;
     height: 12%;
-    background-color: #210ba15d;
+    /* background-color: #210ba15d; */
     position: absolute;
     top: 0;
     z-index: -999;
@@ -9,7 +9,7 @@
 .element-left {
     width: 6%;
     height: 76%;
-    background-color: #1fac1377;
+    /* background-color: #1fac1377; */
     position: absolute;
     top: 12%;
     z-index: -999;
@@ -17,7 +17,7 @@
 .element-right {
    width: 27%;
    height: 100%;
-   background-color: #18d8d877;
+   /* background-color: #18d8d877; */
    position: absolute;
    left: 73%;
    top: 0%;
@@ -26,7 +26,7 @@
 .element-bottom {
     width: 100%;
     height: 12%;
-    background-color: #57120188;
+    /* background-color: #57120188; */
     position: absolute;
     bottom: 0;
     z-index: -999;
@@ -60,18 +60,18 @@
 /* --------------------Top-------------------- */
 .element1-top{
     width: 4%;
-    top: -1%;
+    top: -8%;
     left: -0.5%;
 }
 .element2-top {
     width: 4%;
-    top: -3%;
+    top: 8%;
     left: 4%;
 }
 
 .element3-top {
     width: 4%;
-    top: -0.5%;
+    top: 6%;
     left: 10%;
 }
 
@@ -83,44 +83,44 @@
 
 .element5-top {
     width: 4%;
-    top: -3%;
+    top: -13%;
     left: 29%;
 }
 
 .element6-top {
     width: 4%;
-    top: -3%;
+    top: 16%;
     left: 37%;
 }
 
 .element7-top {
     width: 4%;
-    top: -3%;
+    top: 12%;
     left: 44.5%;
 }
 
 .element8-top {
     width: 3%;
-    top: 3%;
+    top: 24%;
     left: 52%;
 }
 
 .element9-top {
     width: 3%;
-    top: -0.5%;
+    top: 63%;
     left: 57%;
     transform: scaleX(-1);
 }
 
 .element10-top {
     width: 3%;
-    top: 4%;
+    top: 42%;
     left: 61%;
 }
 
 .element11-top {
     width: 3%;
-    top: 2%;
+    top: 32%;
     left: 66%;
     transform: scaleX(-1);
 }
@@ -191,61 +191,61 @@
 /* --------------------Bottom-------------------- */
 .element1-bottom {
     width: 4%;
-    bottom: 5%;
+    bottom: 9%;
     left: -0.5%;
 }
 
 .element2-bottom {
     width: 4%;
-    bottom: -3%;
-    left: 0.5%;
+    bottom: -23%;
+    left: 2%;
 }
 
 .element3-bottom {
     width: 4%;
-    bottom: 1%;
+    bottom: 11%;
     left: 5%;
 }
 
 .element4-bottom {
-    width: 4%;
-    bottom: 1%;
+    width: 3%;
+    bottom: 15%;
     left: 15%;
 }
 
 .element5-bottom {
-    width: 4%;
-    bottom: 2%;
+    width: 2%;
+    bottom: -15%;
     left: 20%;
 }
 
 .element6-bottom {
-    width: 4%;
-    bottom: 1%;
+    width: 3%;
+    bottom: 7%;
     left: 25%;
 }
 
 .element7-bottom {
     width: 2.5%;
-    bottom: 6%;
+    bottom: 62%;
     left: 29%;
 }
 
 .element8-bottom {
-    width: 2.54%;
-    bottom: 1%;
+    width: 2.5%;
+    bottom: 15%;
     left: 31%;
 }
 
 .element9-bottom {
     width: 2.5%;
-    bottom: 7%;
-    left: 33%;
+    bottom: 77%;
+    left: 34%;
 }
 
 .element10-bottom {
     width: 2.5%;
-    bottom: 1%;
+    bottom: 25%;
     left: 36%;
 }
 
@@ -257,31 +257,31 @@
 
 .element12-bottom {
     width: 4%;
-    bottom: 0.5%;
+    bottom: 47.5%;
     left: 45%;
 }
 
 .element13-bottom {
     width: 3%;
-    bottom: 4.5%;
+    bottom: 44.5%;
     left: 51%;
 }
 
 .element14-bottom {
     width: 3%;
-    bottom: 1.5%;
+    bottom: 17.5%;
     left: 54%;
 }
 
 .element15-bottom {
     width: 3%;
-    bottom: 0.5%;
+    bottom: 77.5%;
     left: 59%;
 }
 
 .element16-bottom {
     width: 3%;
-    bottom: 4%;
+    bottom: 34%;
     left: 64%;
     transform: scaleX(-1);
 }

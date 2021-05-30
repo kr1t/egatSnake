@@ -12,11 +12,32 @@ body {
     background-color: #589e0d;
 }
 
+#game-section {
+    width: 70%;
+    margin: 0;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+
+#game-section-score {
+    width: 70%;
+    margin: 0;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 .warpRatio {
     width: 100vw;
     height: 56.25vw;
     /* height:width ratio = 9/16 = .5625  */
-    background: pink;
     max-height: 100vh;
     max-width: 177.78vh;
     /* 16/9 = 1.778 */
@@ -31,6 +52,101 @@ body {
     z-index: -1999;
     overflow: hidden;
 }
+
+/* -------------------------- Index -------------------------- */
+#body-main {
+    background-image: url('../img/main-menu.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #589e0d;
+}
+
+.btn-and-mascot {
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    margin-top: 25%;
+}
+
+.btn-and-mascot img {
+    width: 25%;
+}
+/* -------------------------- End Index -------------------------- */
+
+/* -------------------------- Mini Info -------------------------- */
+#body-content {
+    background-image: url('../img/bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #589e0d;
+}
+
+.card-info {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+
+.card-info img {
+    width: 100%;
+}
+
+.btn-center{
+    position: absolute;
+    width: 100%;
+    z-index: 1099;
+    
+}
+
+.btn-center img{
+    width: 25%;
+    margin-top: 52%;
+}
+
+/* -------------------------- End Mini Info -------------------------- */
+
+/* -------------------------- How to play -------------------------- */
+#game-section-htp {
+    width: 70%;
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#body-content {
+    background-image: url('../img/bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #589e0d;
+}
+
+.card-htp {
+    
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+
+.card-htp img {
+    width: 100%;
+}
+
+.btn-center-2 {
+    position: absolute;
+    width: 100%;
+    z-index: 1099;
+
+}
+
+.btn-center-2 img {
+    width: 25%;
+    margin-top: 56%;
+}
+
+/* --------------------------  End How to play -------------------------- */
 
 .viewport-z {
     width: 70%;
@@ -60,7 +176,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     width: 23%;
-    height: 45%;
+    height: 48%;
     position: absolute;
     right: 10px;
     bottom: -20px;
@@ -146,6 +262,67 @@ body {
     src: url(../font/PSL116pro.86f8c369.ttf);
 }
 
+.gameover-show {
+    display: none;
+}
+
+.card-time-out {
+    width: 100%;
+}
+
+.card-time-out img {
+    width: 100%;
+}
+
+.navigation-btn-box{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: -30px;
+}
+
+.btn-play-again img,
+.btn-exit img {
+    width: 70%;
+}
+
+.total-snake-score{
+    width: 100%;
+    text-align: center;
+    font-size: 6rem;
+}
+
+.score-gameover{
+    font-size: 9rem;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* -------------------------- Footer -------------------------- */
+#footer {
+    background-image: url('../img/footer.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: rgb(236, 236, 236);
+    height: 10%;
+    z-index: -999;
+}
+
+#footer p {
+    position: absolute;
+    left: 10px;
+    bottom: 1%;
+    font-weight: 200;
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+/* -------------------------- End Footer -------------------------- */
+
 @media only screen and (max-width: 1024px) {
     .text-score {
         top: 41%;
@@ -164,17 +341,34 @@ body {
         border-bottom: 5px solid #407a09;
         transform: scale(1);
     }
+    .score-gameover {
+        font-size: 6rem;
+        position: fixed;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 812px) {
     .text-score {
-        top: 37%;
+        top: 36%;
         left: 43%;
-        font-size: 0.95rem;
+        font-size: 0.8rem;
     }
 
     .score {
-        margin-top: 2px;
-        font-size: 1.85rem;
+        font-size: 1.5rem;
+        margin-top: 5px;
+    }
+
+    .viewport-z {
+        top: 15%;
+        border-radius: 10px;
+        border-top: 14px solid #407a09;
+        border-right: 11px solid #407a09;
+        border-left: 3px solid #407a09;
+        border-bottom: 5px solid #407a09;
+        transform: scale(1);
     }
 }

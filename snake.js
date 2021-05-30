@@ -440,14 +440,14 @@ window.onload = function () {
     if (gameover) {
       if (isMove) {
         $(".gameover-show").show()
-        $(".total-snake-score .score").text(score)
+        $(".total-snake-score .score-gameover").text(score)
       }
       context.fillStyle = "rgba(0, 0, 0, 0.5)"
       context.fillRect(0, 0, canvas.width, canvas.height)
 
       context.fillStyle = "#ffffff"
-      context.font = "36px PslFont"
-      drawCenterText("กดที่ปุ่มบังคับเพื่อเริ่ม!", 0, canvas.height / 2, canvas.width)
+      context.font = "11rem PslFont"
+      drawCenterText("3", 0, canvas.height / 2, canvas.width)
     }
   }
 
