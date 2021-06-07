@@ -337,11 +337,12 @@ window.onload = function () {
   function addFactory(n) {
     let randClass = `f-${randRange(1, 100)}`
     $(".addFactory").append(
-      `<img src="assets/img/${n}.png" width="64" class="${randClass} abs" style="z-index:${zIndex}">`
+      `<img src="assets/img/${n}.png" width="64" class="${randClass} abs" style="z-index:${zIndex};">`
     )
+
     setTimeout(function () {
-      $("." + randClass).toggle("slide")
-    }, 500)
+      $("." + randClass).fadeOut("slow")
+    }, 1000)
     zIndex++
   }
   function updateGame(dt) {
