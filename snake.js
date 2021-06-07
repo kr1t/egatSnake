@@ -1,6 +1,5 @@
 // The function gets called when the window is fully loaded
 var audioBg = new Audio("assets/sound/bg.mp3")
-
 window.onload = function () {
   let tryAgainLink = $(".tryAgain").attr("href")
   $(".tryAgain").attr("href", tryAgainLink + "?c=" + randRange(10000, 99999))
@@ -431,6 +430,8 @@ window.onload = function () {
   }
 
   var countTime = 3
+  var calledTime = false
+  var okPlay = false
   // Render the game
   function render() {
     // Draw background
@@ -446,13 +447,37 @@ window.onload = function () {
         $(".gameover-show").show()
         $(".total-snake-score .score-gameover").text(score)
       }
-      context.fillStyle = "rgba(0, 0, 0, 0.5)"
-      context.fillRect(0, 0, canvas.width, canvas.height)
+      if (!calledTime) {
+        drawCountScene()
+        calledTime = true
+      }
+    }
+  }
 
-      context.fillStyle = "#ffffff"
-      context.font = "11rem PslFont"
+  function drawCountSceneOld() {
+    context.fillStyle = "rgba(0, 0, 0, 0.5)"
+    context.fillRect(0, 0, canvas.width, canvas.height)
 
-      drawCenterText("Start", 0, canvas.height / 2, canvas.width)
+    context.fillStyle = "#ffffff"
+    context.font = "11rem PslFont"
+
+    drawCenterText(`${countTime}`, 0, canvas.height / 2, canvas.width)
+    countTime--
+  }
+
+  function drawCountScene() {
+    if (countTime > 0) {
+      $(".fullcount").text(countTime)
+
+      var cs = setTimeout(function () {
+        drawCountScene()
+        countTime--
+      }, 1000)
+    } else {
+      $(".fullcount").hide()
+      clearTimeout(cs)
+      okPlay = true
+      onKeyDown({ keyCode: 39 })
     }
   }
 
@@ -845,7 +870,7 @@ window.onload = function () {
   })
 
   $(".joycon").click(function () {
-    if (gameover) {
+    if (okPlay) {
       if (!isMove) {
         tryNewGame()
       }
@@ -856,10 +881,12 @@ window.onload = function () {
   // Keyboard event handler
   function onKeyDown(e) {
     if (gameover) {
-      if (!isMove) {
-        tryNewGame()
+      if (okPlay) {
+        if (!isMove) {
+          tryNewGame()
+        }
+        responseItem()
       }
-      responseItem()
     } else {
       if (e.keyCode == 37 || e.keyCode == 65) {
         // Left or A
