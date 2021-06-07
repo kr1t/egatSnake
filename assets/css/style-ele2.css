@@ -168,6 +168,21 @@
     left: 14.5%;
 }
 /* --------------------Right-------------------- */
+.element0-right {
+    top: 28%;
+    right: 29.5%;
+    z-index: 9999;
+}
+
+.abs{
+    position: absolute;
+}
+
+.shadowfilter {
+    -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
+}
+
 .element1-right {
     transform: scale(1);
     width: 92%;
