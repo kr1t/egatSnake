@@ -362,6 +362,36 @@ body {
     }
 }
 
+@media only screen and (max-width: 2560px) and (min-height: 1110px) {
+    .score-gameover {
+        font-size: 9rem;
+        position: fixed;
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 2560px) and (min-height: 1210px) {
+    .score-gameover {
+        font-size: 9rem;
+        position: fixed;
+        top: 38%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media only screen and (max-width: 1366px) and (min-height: 1024px) {
+    .score-gameover {
+        font-size: 8rem;
+        position: fixed;
+        top: 49%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     .text-score {
         top: 42%;
