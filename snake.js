@@ -333,8 +333,16 @@ window.onload = function () {
     }
   }
 
+  let zIndex = 1
   function addFactory(n) {
-    $(".addFactory").append(`<img src="assets/img/${n}.png" width="64">`)
+    let randClass = `f-${randRange(1, 100)}`
+    $(".addFactory").append(
+      `<img src="assets/img/${n}.png" width="64" class="${randClass} abs" style="z-index:${zIndex}">`
+    )
+    setTimeout(function () {
+      $("." + randClass).toggle("slide")
+    }, 500)
+    zIndex++
   }
   function updateGame(dt) {
     // Move the snake
@@ -417,10 +425,10 @@ window.onload = function () {
                 addFactory("d")
                 break
               case 6:
-                addFactory("e")
+                addFactory("f")
                 break
               case 7:
-                addFactory("f")
+                addFactory("e")
                 break
               case 8:
                 addFactory("g")
