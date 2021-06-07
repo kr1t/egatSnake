@@ -12,6 +12,10 @@ body {
     display: none;
 }
 
+.score-p{
+    display: block;
+}
+
 .column-joy {
     float: left;
     width: 33.33%;
@@ -432,5 +436,11 @@ body {
         background-color: #272727;
         min-width: 100vw;
         min-height: 100vh;
+    }
+}
+
+@media only screen and (max-device-width: 1024px) and (orientation: landscape) {
+    .score-p {
+        display: none;
     }
 }
