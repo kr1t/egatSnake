@@ -333,6 +333,9 @@ window.onload = function () {
     }
   }
 
+  function addFactory(n) {
+    $(".addFactory").append(`<img src="assets/img/${n}.png" width="64">`)
+  }
   function updateGame(dt) {
     // Move the snake
     if (snake.tryMove(dt)) {
@@ -398,6 +401,33 @@ window.onload = function () {
               setTimeout(function () {
                 $(".score-m-5").toggle("slide")
               }, 500)
+            }
+
+            switch (posItem) {
+              case 2:
+                addFactory("a")
+                break
+              case 3:
+                addFactory("b")
+                break
+              case 4:
+                addFactory("c")
+                break
+              case 5:
+                addFactory("d")
+                break
+              case 6:
+                addFactory("e")
+                break
+              case 7:
+                addFactory("f")
+                break
+              case 8:
+                addFactory("g")
+                break
+              case 9:
+                addFactory("h")
+                break
             }
           }
         }
